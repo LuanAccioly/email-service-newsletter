@@ -1,11 +1,10 @@
 function generateImages(images) {
-  const imageHTML = images.map((image) => `<img src="${image}">`).join("");
+  const imageHTML = images.map((image) => `<img src="${image}">`).join("<br>");
 
   const html = `
-    <div class="container">
       <h2>Imagens:</h2>
+      <br>
       ${imageHTML}
-    </div>
   `;
 
   return html;
@@ -14,13 +13,11 @@ function generateImages(images) {
 function generateFiles(files) {
   const filesHTML = files
     .map((file) => `<a href="${file.url}">${file.name}</a>`)
-    .join("");
+    .join("<br>");
 
   const html = `
-    <div class="container">
       <h2>Arquivos:</h2>
       ${filesHTML}
-    </div>
   `;
   return html;
 }
@@ -34,36 +31,35 @@ export function buildEmail(news) {
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Serif:wght@700&display=swap');
       
-    .title {
-    
+    h1{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 24px;
-      
-      font-family: 'Noto Serif', serif;
-    
     }
     
     p{
-        font-family: 'Noto Sans', sans-serif;
-        font-weight: 400;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 26px;
     }
     img{
         max-height: 500px;
     }
-    
-    .container{
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        gap: 20px;
-    }
-    .container h2, a{
+
+    h2, a{
       align-self: start;
+    }
+    body{
+      max-width: 685px;
+      padding: 0px 20px;
+      margin: 38px auto 0px auto;
+
     }
   </style>
   </head>
   <body>
-    <img src=${UFRPE_LOGO} alt="Descrição da Imagem" width="12.5rem" height="auto">
-    <h1 class="title">${news.title}</h1>
+    <img src=${UFRPE_LOGO} alt="Descrição da Imagem" width="200px" height="auto">
+    <h1>${news.title}</h1>
     <a href=${news.url}>Link para notícia original</a>
     ${news.body}
     ${news.images != "" ? generateImages(news.images) : ""}
