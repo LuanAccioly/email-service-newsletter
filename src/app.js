@@ -1,8 +1,8 @@
-import emailRoutes from "./src/routes/emailRoutes.js";
+import emailRoutes from "./routes/emailRoutes.js";
 
 import express from "express";
 import cors from "cors";
-import db from "./src/db.js";
+import db from "./db.js";
 const app = express();
 
 db();
