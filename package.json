@@ -2,10 +2,10 @@
   "name": "api-newsletter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
