@@ -55,6 +55,13 @@ export function buildEmail(news) {
       margin: 38px auto 0px auto;
 
     }
+    footer{
+      margin-top: 50px;
+      text-align: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: #666666;
+    }
   </style>
   </head>
   <body>
@@ -66,6 +73,11 @@ export function buildEmail(news) {
     ${news.files.length > 0 ? generateFiles(news.files) : ""}
     
   <body />
+  <footer>
+    <p>UFRPE Newsletter</p>
+    <p>Desenvolvido por <a href="https://github.com/LuanAccioly">Luan Accioly</a></p>
+    <p>Clique <a href="https://web-newsletter-amber.vercel.app/unsubscribe">aqui</a> para se desinscrever.</p>
+  </footer>
   `;
   return html;
 }
