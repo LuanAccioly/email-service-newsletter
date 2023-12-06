@@ -76,7 +76,7 @@ export function buildEmail(news) {
   <footer>
     <p>UFRPE Newsletter</p>
     <p>Desenvolvido por <a href="https://github.com/LuanAccioly">Luan Accioly</a></p>
-    <p>Clique <a href="https://web-newsletter-amber.vercel.app/unsubscribe">aqui</a> para se desinscrever.</p>
+    <p>Clique <a href="https://ufrpe-newsletter.vercel.app/unsubscribe">aqui</a> para se desinscrever.</p>
   </footer>
   `;
   return html;
