@@ -17,7 +17,7 @@ function mailOptions(html, bcc, title) {
   return {
     from: "UFRPE Newsletter <ufrpenewsletter@outlook.com>",
     bcc,
-    subject: title,
+    subject: "Comunicado",
     html,
     headers: {
       "X-Entity-Ref-ID": uuid(),
