@@ -26,8 +26,8 @@ export function buildEmail(news) {
   const UFRPE_LOGO = "https://i.ibb.co/TvrvLTY/ufrpe-logo.png";
 
   const html = `
-  <head>
-		
+    <head>
+      
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Serif:wght@700&display=swap');
       
@@ -62,13 +62,22 @@ export function buildEmail(news) {
       font-size: 12px;
       color: #666666;
     }
+    footer p{
+      line-height: 5px;
+      font-size: 13px;
+    }
+    .credits{
+      margin-top: 50px;
+      text-align: center;
 
+    }
     .center{
       max-width: 670px !important;
       padding: 0px 20px;
       margin: 0 auto;
       display: block;
     }
+
   </style>
   </head>
   <body>
@@ -80,12 +89,14 @@ export function buildEmail(news) {
     ${news.images != "" ? generateImages(news.images) : ""}
     ${news.files.length > 0 ? generateFiles(news.files) : ""}
     
-    <div />
-  <body />
+    <div >
+  </body>
   <footer>
-    <p>UFRPE Newsletter</p>
-    <p>Desenvolvido por <a href="https://github.com/LuanAccioly">Luan Accioly</a></p>
-    <p>Clique <a href="https://ufrpe-newsletter.vercel.app/unsubscribe">aqui</a> para se desinscrever.</p>
+    <div class="credits">
+      <p>UFRPE Newsletter</p>
+      <p>Desenvolvido por <a href="https://github.com/LuanAccioly">Luan Accioly</a></p>
+      <p>Clique <a href="https://ufrpe-newsletter.vercel.app/unsubscribe">aqui</a> para se desinscrever.</p>
+    </div>
   </footer>
   `;
   return html;
