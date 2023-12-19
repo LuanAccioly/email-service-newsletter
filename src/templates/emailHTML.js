@@ -23,7 +23,7 @@ function generateFiles(files) {
 }
 
 export function buildEmail(news) {
-  const UFRPE_LOGO = "https://ajuda.ufrpe.br/images/footer/ufrpe-uni.png";
+  const UFRPE_LOGO = "https://i.ibb.co/TvrvLTY/ufrpe-logo.png";
 
   const html = `
   <head>
@@ -44,16 +44,16 @@ export function buildEmail(news) {
     }
     img{
         max-height: 500px;
+        margin: 0 auto;
+        display: block;
+        max-width: 100%;
     }
 
     h2, a{
       align-self: start;
     }
     body{
-      max-width: 685px;
-      padding: 0px 20px;
       margin: 38px auto 0px auto;
-
     }
     footer{
       margin-top: 50px;
@@ -62,16 +62,25 @@ export function buildEmail(news) {
       font-size: 12px;
       color: #666666;
     }
+
+    .center{
+      max-width: 670px !important;
+      padding: 0px 20px;
+      margin: 0 auto;
+      display: block;
+    }
   </style>
   </head>
   <body>
-    <img src=${UFRPE_LOGO} alt="Descrição da Imagem" width="200px" height="auto">
+  <div class="center">
+    <img src=${UFRPE_LOGO} alt="Descrição da Imagem" width="100px" height="auto">
     <h1>${news.title}</h1>
     <a href=${news.url}>Link para notícia original</a>
     ${news.body}
     ${news.images != "" ? generateImages(news.images) : ""}
     ${news.files.length > 0 ? generateFiles(news.files) : ""}
     
+    <div />
   <body />
   <footer>
     <p>UFRPE Newsletter</p>
