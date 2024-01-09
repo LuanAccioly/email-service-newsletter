@@ -13,11 +13,11 @@ const transport = nodeMailer.createTransport({
   },
 });
 
-function mailOptions(html, bcc, title) {
+function mailOptions(html, bcc, subject) {
   return {
     from: "UFRPE Newsletter <ufrpenewsletter@outlook.com>",
     bcc,
-    subject: "Comunicado",
+    subject,
     html,
     headers: {
       "X-Entity-Ref-ID": uuid(),
